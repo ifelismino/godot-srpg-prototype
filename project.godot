@@ -1,0 +1,113 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://src/Actors/actor.gd"
+}, {
+"base": "Control",
+"class": "BattleHUD",
+"language": "GDScript",
+"path": "res://src/UserInterface/battle_hud.gd"
+}, {
+"base": "Spatial",
+"class": "BattleManager",
+"language": "GDScript",
+"path": "res://src/battle_manager.gd"
+}, {
+"base": "Spatial",
+"class": "GridObject",
+"language": "GDScript",
+"path": "res://src/grid_object.gd"
+}, {
+"base": "Node",
+"class": "IsometricLevel",
+"language": "GDScript",
+"path": "res://src/Level/isometric_level.gd"
+}, {
+"base": "Node",
+"class": "NumberUtility",
+"language": "GDScript",
+"path": "res://src/Utility/number_util.gd"
+}, {
+"base": "Actor",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/Actors/player.gd"
+}, {
+"base": "Spatial",
+"class": "TileContainer",
+"language": "GDScript",
+"path": "res://src/UserInterface/tile_container.gd"
+}, {
+"base": "Spatial",
+"class": "TileMarker",
+"language": "GDScript",
+"path": "res://src/UserInterface/tile_marker.gd"
+}, {
+"base": "Spatial",
+"class": "TilePointer",
+"language": "GDScript",
+"path": "res://src/UserInterface/tile_pointer.gd"
+} ]
+_global_script_class_icons={
+"Actor": "",
+"BattleHUD": "",
+"BattleManager": "",
+"GridObject": "",
+"IsometricLevel": "",
+"NumberUtility": "",
+"Player": "",
+"TileContainer": "",
+"TileMarker": "",
+"TilePointer": ""
+}
+
+[application]
+
+config/name="Divinity Tactics"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[input]
+
+right_shoulder={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+left_shoulder={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+3d_physics/layer_1="Actors"
+3d_physics/layer_2="UI"
+
+[memory]
+
+limits/message_queue/max_size_kb=2048
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

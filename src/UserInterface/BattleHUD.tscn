@@ -1,0 +1,411 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Assets/Fonts/height_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/UserInterface/battle_hud.gd" type="Script" id=2]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo_Blue.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo_3AP.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo_5AP.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo_4AP.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/mannequiny/portrait.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo_1AP.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo_6AP.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UserInterface/Sprites/ActorInfo/ActorInfo_2AP.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Default Theme.tres" type="Theme" id=12]
+[ext_resource path="res://Assets/UserInterface/Sprites/Compass.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UserInterface/Sprites/CommandMenu.png" type="Texture" id=14]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo_6AP.png" type="Texture" id=15]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo_1AP.png" type="Texture" id=16]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo.png" type="Texture" id=17]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo_2AP.png" type="Texture" id=18]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo_4AP.png" type="Texture" id=19]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo_Blue.png" type="Texture" id=20]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo_5AP.png" type="Texture" id=21]
+[ext_resource path="res://Assets/UserInterface/Sprites/TargetInfo/TargetInfo_3AP.png" type="Texture" id=22]
+
+[node name="BattleHUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_right = 2.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Height" type="Label" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -137.939
+margin_top = 46.4475
+margin_right = -53.9392
+margin_bottom = 92.4475
+custom_fonts/font = ExtResource( 1 )
+text = "%s h"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActorInfoFrame" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -714.0
+margin_right = 936.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portrait" type="TextureRect" parent="CanvasLayer/ActorInfoFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActorInfo" type="TextureRect" parent="CanvasLayer/ActorInfoFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActorName" type="Label" parent="CanvasLayer/ActorInfoFrame"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 68.0825
+margin_top = -193.675
+margin_right = 260.083
+margin_bottom = -147.675
+theme = ExtResource( 12 )
+text = "Mannequin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthSplit" type="Label" parent="CanvasLayer/ActorInfoFrame"]
+anchor_top = 0.998019
+anchor_right = 0.0213675
+anchor_bottom = 0.998019
+margin_left = 201.276
+margin_top = -137.628
+margin_right = 449.276
+margin_bottom = -91.6276
+theme = ExtResource( 12 )
+text = "/"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealth" type="Label" parent="CanvasLayer/ActorInfoFrame"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 344.173
+margin_top = -135.723
+margin_right = 459.173
+margin_bottom = -89.7228
+theme = ExtResource( 12 )
+text = "99999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="CanvasLayer/ActorInfoFrame"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 210.509
+margin_top = -135.552
+margin_right = 325.509
+margin_bottom = -89.5515
+theme = ExtResource( 12 )
+text = "99999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="CanvasLayer/ActorInfoFrame"]
+anchor_top = 0.998019
+anchor_bottom = 0.998019
+margin_left = 458.69
+margin_top = -200.919
+margin_right = 504.69
+margin_bottom = -154.919
+theme = ExtResource( 12 )
+text = "99"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AP" type="Control" parent="CanvasLayer/ActorInfoFrame"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AP 1" type="TextureRect" parent="CanvasLayer/ActorInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AP 2" type="TextureRect" parent="CanvasLayer/ActorInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AP 3" type="TextureRect" parent="CanvasLayer/ActorInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="AP 4" type="TextureRect" parent="CanvasLayer/ActorInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+
+[node name="AP 5" type="TextureRect" parent="CanvasLayer/ActorInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+
+[node name="AP 6" type="TextureRect" parent="CanvasLayer/ActorInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 896.0
+margin_bottom = 674.0
+texture = ExtResource( 10 )
+
+[node name="Compass" type="TextureRect" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -174.0
+margin_top = 16.0
+margin_right = 13.0
+margin_bottom = 119.0
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CommandMenu" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -934.0
+margin_top = -712.0
+margin_right = 2.0
+margin_bottom = 2.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/CommandMenu"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -298.0
+margin_top = -273.0
+margin_right = -25.0
+margin_bottom = -30.0
+follow_focus = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CommandMenu/ScrollContainer"]
+margin_right = 270.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 270, 0 )
+
+[node name="Move" type="Button" parent="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer"]
+margin_right = 270.0
+margin_bottom = 52.0
+theme = ExtResource( 12 )
+text = "Move"
+flat = true
+align = 0
+
+[node name="Act" type="Button" parent="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer"]
+margin_top = 56.0
+margin_right = 270.0
+margin_bottom = 108.0
+theme = ExtResource( 12 )
+text = "Act"
+flat = true
+align = 0
+
+[node name="Wait" type="Button" parent="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer"]
+margin_top = 112.0
+margin_right = 270.0
+margin_bottom = 164.0
+theme = ExtResource( 12 )
+text = "Wait"
+flat = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Status" type="Button" parent="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 270.0
+margin_bottom = 220.0
+theme = ExtResource( 12 )
+text = "Status"
+flat = true
+align = 0
+
+[node name="TargetInfoFrame" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -936.0
+margin_top = -714.0
+texture = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portrait" type="TextureRect" parent="CanvasLayer/TargetInfoFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TargetInfo" type="TextureRect" parent="CanvasLayer/TargetInfoFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 17 )
+
+[node name="ActorName" type="Label" parent="CanvasLayer/TargetInfoFrame"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 468.872
+margin_top = -193.468
+margin_right = 660.873
+margin_bottom = -147.468
+theme = ExtResource( 12 )
+text = "Mannequin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthSplit" type="Label" parent="CanvasLayer/TargetInfoFrame"]
+anchor_top = 0.998019
+anchor_right = 0.0213675
+anchor_bottom = 0.998019
+margin_left = 576.052
+margin_top = -139.73
+margin_right = 824.052
+margin_bottom = -93.7303
+theme = ExtResource( 12 )
+text = "/"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealth" type="Label" parent="CanvasLayer/TargetInfoFrame"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 718.949
+margin_top = -137.825
+margin_right = 833.949
+margin_bottom = -91.8253
+theme = ExtResource( 12 )
+text = "99999"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Label" parent="CanvasLayer/TargetInfoFrame"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 585.285
+margin_top = -137.654
+margin_right = 700.285
+margin_bottom = -91.654
+theme = ExtResource( 12 )
+text = "99999"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="CanvasLayer/TargetInfoFrame"]
+anchor_top = 0.998019
+anchor_bottom = 0.998019
+margin_left = 863.292
+margin_top = -203.152
+margin_right = 909.292
+margin_bottom = -157.152
+theme = ExtResource( 12 )
+text = "99"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AP" type="Control" parent="CanvasLayer/TargetInfoFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AP 1" type="TextureRect" parent="CanvasLayer/TargetInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+
+[node name="AP 2" type="TextureRect" parent="CanvasLayer/TargetInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+
+[node name="AP 3" type="TextureRect" parent="CanvasLayer/TargetInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 22 )
+
+[node name="AP 4" type="TextureRect" parent="CanvasLayer/TargetInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+
+[node name="AP 5" type="TextureRect" parent="CanvasLayer/TargetInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 21 )
+
+[node name="AP 6" type="TextureRect" parent="CanvasLayer/TargetInfoFrame/AP"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+[connection signal="pressed" from="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer/Move" to="." method="_on_Move_pressed"]
+[connection signal="pressed" from="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer/Act" to="." method="_on_Act_pressed"]
+[connection signal="pressed" from="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer/Wait" to="." method="_on_Wait_pressed"]
+[connection signal="pressed" from="CanvasLayer/CommandMenu/ScrollContainer/VBoxContainer/Status" to="." method="_on_Status_pressed"]

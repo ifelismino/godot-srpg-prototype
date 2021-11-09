@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Characters/mannequiny/mannequiny-0.3.0.glb" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/player.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.462126
+height = 0.824423
+
+[node name="mannequiny-030" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+fullName = "Mannequin"
+portrait = "res://Assets/Characters/mannequiny/portrait.png"
+move = 2
+jump = 2
+hp = 1000
+maxHP = 1000
+ap = 4
+lvl = 10
+speed = 5
+
+[node name="root" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.236195 )
+
+[node name="Area" type="Area" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.236195 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.918708, 0.174834 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = "idle"
